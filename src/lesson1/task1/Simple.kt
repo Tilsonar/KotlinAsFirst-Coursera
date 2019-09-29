@@ -1,6 +1,8 @@
 @file:Suppress("UNUSED_PARAMETER")
+
 package lesson1.task1
 
+import org.jetbrains.annotations.TestOnly
 import kotlin.math.*
 
 /**
@@ -32,6 +34,8 @@ fun discriminant(a: Double, b: Double, c: Double) = sqr(b) - 4 * a * c
 fun quadraticEquationRoot(a: Double, b: Double, c: Double) =
         (-b + sqrt(discriminant(a, b, c))) / (2 * a)
 
+
+
 /**
  * Пример
  *
@@ -48,8 +52,23 @@ fun quadraticRootProduct(a: Double, b: Double, c: Double): Double {
  * Пример главной функции
  */
 fun main(args: Array<String>) {
-    val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
-    println("Root product: $x1x2")
+    //val x1x2 = quadraticRootProduct(1.0, 13.0, 42.0)
+    //println("Root product: $x1x2")
+    val result = sqr(11)
+    println("11 * 11 = $result")
+
+    /*class Tests {
+        @Test
+        fun quadraticEquarionRoot() {
+            assertEquals(
+                    2.0, quadraticEquarionRoot(
+                    1.0, -3.0, 2.0
+            ), 1e-13
+            )
+
+        }
+
+    }*/
 }
 
 /**
@@ -75,7 +94,11 @@ fun lengthInMeters(sagenes: Int, arshins: Int, vershoks: Int): Double = TODO()
  * Пользователь задает угол в градусах, минутах и секундах (например, 36 градусов 14 минут 35 секунд).
  * Вывести значение того же угла в радианах (например, 0.63256).
  */
-fun angleInRadian(deg: Int, min: Int, sec: Int): Double = TODO()
+fun angleInRadian(deg: Int, min: Int, sec: Int): Double{
+
+    val mydeg = deg+(min + sec/60)/60
+    return mydeg * PI / 180
+}
 
 /**
  * Тривиальная
@@ -118,3 +141,5 @@ fun accountInThreeYears(initial: Int, percent: Int): Double = TODO()
  * Необходимо вывести число, полученное из заданного перестановкой цифр в обратном порядке (например, 874).
  */
 fun numberRevert(number: Int): Int = TODO()
+
+
